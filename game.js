@@ -1,5 +1,13 @@
-const canvas = document.getElementById('gameCanvas');
+const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
+
+// Mengambil ukuran canvas dari style CSS
+const canvasWidth = parseInt(window.getComputedStyle(canvas).width);
+const canvasHeight = parseInt(window.getComputedStyle(canvas).height);
+
+// Set ukuran canvas internal agar sesuai dengan ukuran CSS
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
 
 const boxSize = 20;
 const canvasSize = canvas.width;
@@ -9,8 +17,8 @@ let food = spawnFood();
 let bigFood = null;
 let bigFoodTimeout = null;
 let score = 0;
-let sound = new Audio('/bop.mp3'); // Sound for eating food
-let bigFoodSound = new Audio('/bip-bop.mp3'); // Sound for eating food
+let sound = new Audio('assets/audio/bop.mp3'); // Sound for eating food
+let bigFoodSound = new Audio('assets/audio/bip-bop.mp3'); // Sound for eating food
 let blinkCounter = 0;
 let isGameOver = false;
 

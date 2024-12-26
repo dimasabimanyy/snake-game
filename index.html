@@ -12,22 +12,25 @@
         box-sizing: border-box;
       }
 
-      /* Background and Layout */
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: linear-gradient(135deg, #a8dadc, #457b9d); 
         font-family: "Arial", sans-serif;
         color: white;
         overflow: hidden;
       }
 
+      /* Background and Layout */
+      .app {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #a8dadc, #457b9d);
+      }
+
       /* Container for the game */
       .game-container {
         text-align: center;
-        position: relative;
+        /* position: relative; */
       }
 
       .game-container h1 {
@@ -37,54 +40,38 @@
 
       /* Canvas Styling */
       canvas {
-        border: 5px solid #f1faee; /* Soft off-white border */
+        border: 2px solid #f1faee;
         border-radius: 3px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-        background: #222; /* Darker background for the canvas itself */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        background: #222;
         display: block;
       }
 
-      /* Score and Game Over text styling */
-      .game-info {
-        position: absolute;
-        top: 10px;
-        width: 100%;
-        font-size: 20px;
-        z-index: 10;
-      }
-
-      .score {
-        color: #f1faee; /* Soft light color for the score */
-        font-size: 24px;
-      }
-
-      .game-over-text {
-        font-size: 32px;
-        color: #e63946; /* Soft red for the game over text */
-        margin-top: 20px;
+      /* .game-over-text {
+        font-size: 0.4rem;
+        color: #c82f3c; 
       }
 
       .restart-text {
         font-size: 20px;
-        color: #f1faee; /* Soft light color for the restart message */
+        color: #f1faee; 
         margin-top: 10px;
-      }
+      } */
 
-      /* Game Start Screen Styling */
-      .start-screen {
+      /* .start-screen {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
         font-size: 30px;
-        color: #f1faee; /* Soft light color for the start screen */
+        color: #f1faee;
         font-weight: bold;
       }
 
       .start-screen button {
-        background-color: #f1faee; /* Light button color */
-        color: #457b9d; /* Darker contrast for the button text */
+        background-color: #f1faee; 
+        color: #457b9d; 
         font-size: 18px;
         padding: 10px 20px;
         border: none;
@@ -94,20 +81,20 @@
       }
 
       .start-screen button:hover {
-        background-color: #a8dadc; /* Lighter hover color */
+        background-color: #a8dadc; 
+      } */
+
+      #game-canvas {
+        width: 400px;
+        height: 400px;
       }
     </style>
   </head>
   <body>
-    <div class="game-container">
-      <h1>🐍 Snake Game 🐍</h1>
-      <canvas id="gameCanvas" width="400" height="400"></canvas>
-      <div class="game-over-text" style="display: none">GAME OVER</div>
-      <div class="restart-text" style="display: none">
-        Press Enter to Restart
-      </div>
-      <div class="start-screen" style="display: none">
-        <p>Press Enter to Start</p>
+    <div class="app">
+      <div class="game-container">
+        <h1>🐍 Snake Game 🐍</h1>
+        <canvas id="game-canvas"></canvas>
       </div>
     </div>
 
